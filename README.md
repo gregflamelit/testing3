@@ -2,6 +2,13 @@
 
 [![Model QA](https://github.com/gregflamelit/testing3/actions/workflows/ci.yml/badge.svg)](https://github.com/gregflamelit/testing3/actions/workflows/ci.yml)
 
+**[Open the deployed Wine Lab app](https://wine-lab-gregflamelit.greg125769.chatgpt.site)** — owner-private; use the same ChatGPT account that owns the Site.
+
+The live prediction, batch comparison, and analytics screens were verified in a signed-in browser.
+[All four release CI jobs passed](https://github.com/gregflamelit/testing3/actions/runs/42545668016):
+web tests/typecheck/build, Linux ML QA/reproduction, Windows ML QA/reproduction, and Docker HTTP inference.
+The release includes 40 app tests plus the existing 93 Python tests, and 6,388 cross-runtime prediction parity cases.
+
 Predict sensory wine quality with three measured inputs, compare CSV batches, and inspect the model evidence.
 The complete React app is in `web/`, backed by the exact released CatBoost model and preprocessing.
 The repository also includes a reproducible 10-family benchmark and the original Python inference service.
