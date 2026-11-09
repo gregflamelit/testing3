@@ -1,0 +1,4 @@
+sample_id,volatile acidity,sulphates,alcohol,quality
+Sample A,0.70,0.56,9.4,5
+Sample B,0.28,0.80,12.5,7
+Sample C,0.55,0.60,14.5,

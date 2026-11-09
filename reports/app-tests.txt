@@ -1,0 +1,60 @@
+✔ health and model schema expose the locked champion (21.4669ms)
+✔ real route returns exact ordered batch predictions without caching (2.4148ms)
+✔ route handles 500 sample chunks and 1000 sample request limit (26.8267ms)
+✔ route rejects invalid contract {} (0.8512ms)
+✔ route rejects invalid contract {"samples":[]} (0.3581ms)
+✔ route rejects invalid contract {"samples":[{}]} (0.2472ms)
+✔ route rejects invalid contract {"samples":[{"volatile acidity":0.7,"sulphates":0.56,"alcohol":9.4}],"extra":1} (0.2307ms)
+✔ route rejects invalid contract {"samples":[{"volatile acidity":0.7,"sulphates":0.56,"alcohol":9.4,"quality":5}]} (0.2102ms)
+✔ route rejects malformed JSON and oversized body (2.2746ms)
+✔ client preserves server errors and rejects incomplete/nonfinite responses (21.1377ms)
+✔ CSV supports quotes, BOM, CRLF, sample names, and semicolons (1.6812ms)
+✔ full dataset columns are ignored explicitly; observed quality stays separate (0.2002ms)
+✔ all 1,599 dataset rows are supported for chunked inference (8.0824ms)
+✔ CSV downloads escape spreadsheet formulas and quoted IDs (0.8471ms)
+✔ reject invalid CSV  (0.3574ms)
+✔ reject invalid CSV sample_id,volatile acidity,sulphates,alcohol (0.1485ms)
+✔ reject invalid CSV unknown,sulphates,alcohol
+1,2,3 (0.1974ms)
+✔ reject invalid CSV sample_id,volatile acidity,sulphates,alcohol
+x,,.5,9 (0.2097ms)
+✔ reject invalid CSV sample_id,volatile acidity,sulphates,alcohol
+x,nan,.5,9 (0.1675ms)
+✔ reject invalid CSV sample_id,volatile acidity,sulphates,alcohol
+x,-1,.5,9 (0.2528ms)
+✔ reject invalid CSV sample_id,volatile acidity,sulphates,alcohol
+x,1,.5,9,1 (0.1368ms)
+✔ reject invalid CSV sample_id,volatile acidity,sulphates,alcohol
+x,1,.5,9
+x (0.1481ms)
+✔ reject invalid CSV sample_id,volatile acidity,sulphates,alcohol
+"broken,1, (0.0871ms)
+✔ reject invalid CSV alcohol,alcohol,sulphates,volatile acidity
+9,9,.5,.7 (0.0595ms)
+✔ reject invalid CSV sample_id,volatile acidity,sulphates,alcohol,quality
+x, (0.1118ms)
+✔ reject invalid CSV sample_id,volatile acidity,sulphates,alcohol,extra
+x,.7 (0.0694ms)
+✔ reject invalid CSV sample_id,volatile acidity,sulphates,alcohol
+"x"oops,.7 (0.1791ms)
+✔ web ensemble matches Python champion on dataset, randomized inputs, and every split boundary (116.4604ms)
+✔ range warnings and deterministic ordered batches (0.8439ms)
+✔ reject invalid model input null (0.2ms)
+✔ reject invalid model input [] (0.0687ms)
+✔ reject invalid model input {} (0.0633ms)
+✔ reject invalid model input [{"volatile acidity":0.7,"sulphates":0.56,"alcohol":9.4},{}] (0.0598ms)
+✔ reject invalid model input [{"volatile acidity":0.7,"sulphates":0.56,"alcohol":9.4,"quality":5}] (0.0522ms)
+✔ reject invalid model input [{"volatile acidity":0.7,"sulphates":0.56,"alcohol":"9.4"}] (0.0724ms)
+✔ reject invalid model input [{"volatile acidity":0.7,"sulphates":0.56,"alcohol":true}] (0.0636ms)
+✔ reject invalid model input [{"volatile acidity":0.7,"sulphates":0.56,"alcohol":null}] (0.1114ms)
+✔ reject invalid model input [{"volatile acidity":0.7,"sulphates":0.56,"alcohol":null}] (0.0649ms)
+✔ reject invalid model input [{"volatile acidity":0.7,"sulphates":0.56,"alcohol":-1}] (0.0531ms)
+✔ reject invalid model input [{"volatile acidity":0.7,"sulphates":0.56,"alcohol":9.4},{"volatile acidity (0.0474ms)
+ℹ tests 40
+ℹ suites 0
+ℹ pass 40
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 280.1945

@@ -138,4 +138,4 @@ Dataset: Cortez, P., Cerdeira, A., Almeida, F., Matos, T., and Reis, J. (2009),
 [Wine Quality, UCI](https://doi.org/10.24432/C56S3T), CC BY 4.0.
 The supplied CSV uses comma separators and is preserved byte-for-byte.
 Implementation, documentation, and analysis were produced with OpenAI Codex from user prompts.
-Libraries and upstream algorithms are listed in the exact dependency lock; no external application template was used.
+Libraries and upstream algorithms are listed in the exact dependency lock; modeling code uses no application template. The web frontend uses the OpenAI Sites Vinext starter, React, and Lucide icons.

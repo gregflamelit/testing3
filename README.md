@@ -1,10 +1,27 @@
-# Wine Lab: red wine quality model
+# Wine Lab: red wine intelligence app
 
 [![Model QA](https://github.com/gregflamelit/testing3/actions/workflows/ci.yml/badge.svg)](https://github.com/gregflamelit/testing3/actions/workflows/ci.yml)
 
-Predict sensory wine quality with three measured inputs. This model-first release includes a reproducible
-10-family benchmark, feature reduction, an independently evaluated champion, and a validated inference API.
-The customer-facing web interface is a later phase.
+Predict sensory wine quality with three measured inputs, compare CSV batches, and inspect the model evidence.
+The complete React app is in `web/`, backed by the exact released CatBoost model and preprocessing.
+The repository also includes a reproducible 10-family benchmark and the original Python inference service.
+
+## Web app
+
+- **Prediction:** three inputs with sliders and numeric entry, examples, stale-result handling, range warnings, and CSV export.
+- **Batch comparison:** CSV upload, robust validation, up to 5,000 samples, 500-sample inference chunks,
+  sorting/search/filtering, pagination, up to three side-by-side samples, and full CSV export.
+- **Analytics:** model-family benchmark, input-count comparison, test metrics/baseline, rare-score errors,
+  predicted-versus-observed plot, and downloadable evaluation evidence.
+
+The app's same-origin `/api/predict` route evaluates the fitted 300-tree ensemble and scaler exported
+from `artifacts/champion.joblib`. It does not fit a replacement model. A 6,388-case parity test checks agreement
+with Python to within 1e-10, including every dataset row, randomized measurements, and split-boundary probes.
+Uploads are parsed in the browser. Sample labels and optional observed scores never enter the prediction request.
+Observed-file metrics are clearly distinguished from the independent model-release evaluation.
+
+See [web setup and deployment](web/README.md). Sites hosting begins owner-private; GitHub holds the complete source.
+The original Docker/Python service remains available as a separate deployment option.
 
 **Selected champion: CatBoost using volatile acidity, sulphates, and alcohol.**
 
@@ -152,5 +169,6 @@ Dataset: Cortez et al. (2009), [UCI Wine Quality](https://doi.org/10.24432/C56S3
 See [data provenance](data/README.md). Exact library versions are in `requirements.lock.txt`.
 
 OpenAI Codex generated the implementation, tests, documentation, and analysis from user prompts.
-No chatbot, generative model, paid API, external application template, or runtime credential is required.
+The web app uses the OpenAI Sites Vinext starter, React, and Lucide icons; modeling code uses no application template.
+No chatbot, generative model, paid prediction API, or prediction credential is required.
 Joblib artifacts should only be loaded from a trusted source; the release loader verifies the recorded SHA-256.
