@@ -1,0 +1,15 @@
+{
+  "transport": "real localhost HTTP",
+  "status": "passed",
+  "response": {
+    "predictions": [
+      {
+        "predicted_quality": 5.0854242151237035,
+        "model_version": "wine-quality-1.0.0",
+        "warnings": [],
+        "reference_test_mae": 0.45016559538019935,
+        "note": "Continuous sensory quality estimate; test MAE is aggregate error, not an individual prediction interval."
+      }
+    ]
+  }
+}

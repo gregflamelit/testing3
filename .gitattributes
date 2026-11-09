@@ -1,0 +1,4 @@
+* text=auto eol=lf
+data/winequality-red.csv -text
+*.joblib binary
+*.png binary

@@ -1,0 +1,92 @@
+{
+  "seed": 42,
+  "data_sha256": "d6a0d9bd24806944818795f22500c46cb6424cbff517aacda36595d3ed9b2daa",
+  "audit": {
+    "rows": 1599,
+    "input_count": 11,
+    "missing_cells": 0,
+    "duplicate_rows": 240,
+    "unique_predictor_groups": 1359,
+    "conflicting_target_groups": 0,
+    "quality_counts": {
+      "3": 10,
+      "4": 53,
+      "5": 681,
+      "6": 638,
+      "7": 199,
+      "8": 18
+    },
+    "ranges": {
+      "fixed acidity": {
+        "min": 4.6,
+        "max": 15.9
+      },
+      "volatile acidity": {
+        "min": 0.12,
+        "max": 1.58
+      },
+      "citric acid": {
+        "min": 0.0,
+        "max": 1.0
+      },
+      "residual sugar": {
+        "min": 0.9,
+        "max": 15.5
+      },
+      "chlorides": {
+        "min": 0.012,
+        "max": 0.611
+      },
+      "free sulfur dioxide": {
+        "min": 1.0,
+        "max": 72.0
+      },
+      "total sulfur dioxide": {
+        "min": 6.0,
+        "max": 289.0
+      },
+      "density": {
+        "min": 0.9900700000000001,
+        "max": 1.00369
+      },
+      "pH": {
+        "min": 2.74,
+        "max": 4.01
+      },
+      "sulphates": {
+        "min": 0.33,
+        "max": 2.0
+      },
+      "alcohol": {
+        "min": 8.4,
+        "max": 14.9
+      }
+    }
+  },
+  "development_rows": 1279,
+  "test_rows": 320,
+  "split": "first fold of 5-fold StratifiedGroupKFold, shuffled seed=42",
+  "group_identity": "exact tuple of all 11 predictor values; target excluded",
+  "primary_metric": "MAE",
+  "tie_tolerance_mae": 0.005,
+  "search_draws_per_family": 12,
+  "cv_folds": 5,
+  "robustness_seeds": [
+    42,
+    17,
+    2026
+  ],
+  "finalist_families": 3,
+  "feature_counts": [
+    3,
+    5,
+    7,
+    9,
+    11
+  ],
+  "selection_rule": "Within 0.005 MAE of lowest repeated-CV MAE, choose fewest features, then MAE, then RMSE, then name",
+  "feature_selection": "ExtraTrees top-k fit independently inside every training fold; all-11 passthrough control",
+  "test_policy": "only locked champion and median baseline; no test-driven model or feature changes",
+  "release_gate": "test MAE at least 5% below baseline and positive lower 95% paired group-bootstrap improvement bound",
+  "created_utc": "2026-11-09T00:46:58.636694+00:00"
+}

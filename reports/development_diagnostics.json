@@ -1,0 +1,49 @@
+{
+  "baseline_cv": {
+    "cv_mae": 0.6591084558823529,
+    "cv_mae_sd": 0.003242805451647051,
+    "cv_rmse": 0.8872939077343597,
+    "cv_r2": -0.20178031444499575,
+    "train_mae": 0.6591086647727272,
+    "fold_maes": [
+      0.65625,
+      0.66015625,
+      0.65625,
+      0.6640625,
+      0.6588235294117647
+    ],
+    "mean_fit_seconds": 0.006769943237304688
+  },
+  "shuffled_target_cv": {
+    "cv_mae": 0.6949448828929451,
+    "cv_mae_sd": 0.03284072082778235,
+    "cv_rmse": 0.873508597047784,
+    "cv_r2": -0.12039366956774296,
+    "train_mae": 0.5638958993629408,
+    "fold_maes": [
+      0.6503971053439324,
+      0.7096794720195931,
+      0.7168177034472196,
+      0.7272213751055886,
+      0.6706087585483917
+    ],
+    "mean_fit_seconds": 0.3843745231628418
+  },
+  "shuffled_target_baseline_cv": {
+    "cv_mae": 0.6825949754901961,
+    "cv_mae_sd": 0.0417613577200781,
+    "cv_rmse": 0.9123736508249293,
+    "cv_r2": -0.22406428594809716,
+    "train_mae": 0.6825664024315737,
+    "fold_maes": [
+      0.6171875,
+      0.6953125,
+      0.66796875,
+      0.7109375,
+      0.7215686274509804
+    ],
+    "mean_fit_seconds": 0.00020160675048828126
+  },
+  "negative_control_note": "One group-level label permutation is a smoke check, not a permutation significance test.",
+  "selection_bias_note": "Development CV is reused for tuning and selection; final holdout supplies the independent assessment."
+}

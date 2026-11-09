@@ -1,0 +1,71 @@
+{
+  "family": "CatBoost",
+  "feature_count": 3,
+  "cv_mae": 0.4807698242815586,
+  "cv_mae_sd": 0.021147071676316707,
+  "cv_rmse": 0.6688813214483714,
+  "cv_r2": 0.3163595623480389,
+  "train_mae": 0.4023949243731974,
+  "fold_maes": [
+    0.49406910809764193,
+    0.4828827295463254,
+    0.47314540736911515,
+    0.46875135985707406,
+    0.46511118940058765,
+    0.5221103214606941,
+    0.4754307537927459,
+    0.47578573774233157,
+    0.5169482819918012,
+    0.45283641625806503,
+    0.4764858052204259,
+    0.48508955251894453,
+    0.49681891576439374,
+    0.442341596114382,
+    0.48374018908885247
+  ],
+  "mean_fit_seconds": 0.4001445929209391,
+  "comparison_to_all_features": {
+    "all_feature_cv_mae": 0.4767799699236802,
+    "mae_change": 0.0039898543578784085,
+    "paired_fold_mae_changes": [
+      -0.004049294074888632,
+      -0.007318616144189549,
+      -0.011115968755301964,
+      -0.004100649157624203,
+      0.021839470910115177,
+      0.01879354944691347,
+      -0.013466515463720574,
+      0.010978156327345168,
+      0.028520605712546443,
+      0.006760387929740486,
+      -0.01914292718247823,
+      0.0008427483982818562,
+      0.0007165131387187884,
+      0.011592752914978799,
+      0.01899760136774048
+    ],
+    "caution": "Repeated CV folds overlap; fold differences are descriptive, not independent significance tests."
+  },
+  "selected_features": [
+    "volatile acidity",
+    "sulphates",
+    "alcohol"
+  ],
+  "removed_features": [
+    "fixed acidity",
+    "citric acid",
+    "residual sugar",
+    "chlorides",
+    "free sulfur dioxide",
+    "total sulfur dioxide",
+    "density",
+    "pH"
+  ],
+  "hyperparameters": {
+    "model__loss_function": "MAE",
+    "model__learning_rate": 0.025,
+    "model__l2_leaf_reg": 3,
+    "model__iterations": 300,
+    "model__depth": 6
+  }
+}

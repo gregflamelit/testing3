@@ -1,0 +1,66 @@
+{
+  "model_version": "wine-quality-1.0.0",
+  "family": "CatBoost",
+  "seed": 42,
+  "selected_features": [
+    "volatile acidity",
+    "sulphates",
+    "alcohol"
+  ],
+  "removed_features": [
+    "fixed acidity",
+    "citric acid",
+    "residual sugar",
+    "chlorides",
+    "free sulfur dioxide",
+    "total sulfur dioxide",
+    "density",
+    "pH"
+  ],
+  "data_sha256": "d6a0d9bd24806944818795f22500c46cb6424cbff517aacda36595d3ed9b2daa",
+  "artifact_sha256": "82abd3c707275d2de5b9826d39c6035333151cb0237d231d6d7737360d531f10",
+  "training_rows": 1279,
+  "test_rows": 320,
+  "refit_on_test": false,
+  "training_ranges": {
+    "volatile acidity": {
+      "min": 0.16,
+      "max": 1.58
+    },
+    "sulphates": {
+      "min": 0.33,
+      "max": 1.98
+    },
+    "alcohol": {
+      "min": 8.4,
+      "max": 14.0
+    }
+  },
+  "test_metrics": {
+    "mae": 0.45016559538019935,
+    "rmse": 0.6525544515288709,
+    "r2": 0.33276129255376474,
+    "median_absolute_error": 0.28173648570680454,
+    "within_half_point": 0.6125,
+    "within_one_point": 0.86875,
+    "bias": -0.003371896733846061,
+    "p90_absolute_error": 1.0205757332528087
+  },
+  "test_mae_95_ci": [
+    0.3957750114563841,
+    0.5095580056468029
+  ],
+  "prediction_interval": null,
+  "scope": "Portuguese red Vinho Verde samples; sensory quality proxy, not safety, price, or causal advice",
+  "dependencies": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "catboost": "1.2.10",
+    "xgboost": "3.4.1",
+    "joblib": "1.6.0"
+  },
+  "python": "3.12.14",
+  "elapsed_seconds": 160.79700000025332
+}

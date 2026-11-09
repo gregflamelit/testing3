@@ -1,0 +1,12 @@
+{
+  "family": "CatBoost",
+  "selected_features": [
+    "volatile acidity",
+    "sulphates",
+    "alcohol"
+  ],
+  "test_mae": 0.45016559538019935,
+  "baseline_mae": 0.653125,
+  "elapsed_seconds": 160.79700000025332,
+  "model_sha256": "82abd3c707275d2de5b9826d39c6035333151cb0237d231d6d7737360d531f10"
+}

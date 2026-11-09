@@ -1,0 +1,29 @@
+name: Reproduce full benchmark
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      PYTHONPATH: src
+      OMP_NUM_THREADS: "1"
+      OPENBLAS_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -r requirements.lock.txt
+      - run: python -m wine_lab.train --output benchmark-output --jobs 2 --draws 12
+      - uses: actions/upload-artifact@v4
+        with:
+          name: full-benchmark
+          path: |
+            benchmark-output/reports/
+            benchmark-output/artifacts/

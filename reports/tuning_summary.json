@@ -1,0 +1,129 @@
+[
+  {
+    "family": "CatBoost",
+    "cv_mae": 0.4777409702985267,
+    "cv_mae_sd": 0.019105222529272266,
+    "cv_rmse": 0.6457986532609398,
+    "parameters": {
+      "model__loss_function": "MAE",
+      "model__learning_rate": 0.025,
+      "model__l2_leaf_reg": 3,
+      "model__iterations": 300,
+      "model__depth": 6
+    },
+    "configurations": 12
+  },
+  {
+    "family": "SVR",
+    "cv_mae": 0.4841433422232158,
+    "cv_mae_sd": 0.01895412456688304,
+    "cv_rmse": 0.647740485359893,
+    "parameters": {
+      "model__gamma": "scale",
+      "model__epsilon": 0.1,
+      "model__C": 0.5
+    },
+    "configurations": 12
+  },
+  {
+    "family": "ExtraTrees",
+    "cv_mae": 0.48431832122224927,
+    "cv_mae_sd": 0.015065525702964324,
+    "cv_rmse": 0.6297680126007186,
+    "parameters": {
+      "model__min_samples_leaf": 2,
+      "model__max_features": 1.0,
+      "model__max_depth": 18
+    },
+    "configurations": 12
+  },
+  {
+    "family": "RandomForest",
+    "cv_mae": 0.4917252671736345,
+    "cv_mae_sd": 0.01975365736342612,
+    "cv_rmse": 0.6352730879552935,
+    "parameters": {
+      "model__min_samples_leaf": 1,
+      "model__max_features": 0.6,
+      "model__max_depth": 14
+    },
+    "configurations": 12
+  },
+  {
+    "family": "GradientBoosting",
+    "cv_mae": 0.4954456873356616,
+    "cv_mae_sd": 0.018303204768681438,
+    "cv_rmse": 0.6374542671338345,
+    "parameters": {
+      "model__n_estimators": 350,
+      "model__min_samples_leaf": 15,
+      "model__max_depth": 3,
+      "model__loss": "squared_error",
+      "model__learning_rate": 0.025
+    },
+    "configurations": 12
+  },
+  {
+    "family": "XGBoost",
+    "cv_mae": 0.4962631499884175,
+    "cv_mae_sd": 0.021111158382553483,
+    "cv_rmse": 0.637068965859445,
+    "parameters": {
+      "model__subsample": 0.8,
+      "model__reg_lambda": 10,
+      "model__n_estimators": 450,
+      "model__min_child_weight": 3,
+      "model__max_depth": 3,
+      "model__learning_rate": 0.025,
+      "model__colsample_bytree": 0.8
+    },
+    "configurations": 12
+  },
+  {
+    "family": "HistGradientBoosting",
+    "cv_mae": 0.49821399045670034,
+    "cv_mae_sd": 0.025048199430657062,
+    "cv_rmse": 0.6425573287364335,
+    "parameters": {
+      "model__min_samples_leaf": 10,
+      "model__max_leaf_nodes": 7,
+      "model__max_iter": 350,
+      "model__learning_rate": 0.025,
+      "model__l2_regularization": 0
+    },
+    "configurations": 12
+  },
+  {
+    "family": "ElasticNet",
+    "cv_mae": 0.506902310904886,
+    "cv_mae_sd": 0.010117206680979773,
+    "cv_rmse": 0.6520909025997634,
+    "parameters": {
+      "model__l1_ratio": 0.9,
+      "model__alpha": 0.001
+    },
+    "configurations": 12
+  },
+  {
+    "family": "Ridge",
+    "cv_mae": 0.5069181908631591,
+    "cv_mae_sd": 0.010228784353694667,
+    "cv_rmse": 0.6522993752918532,
+    "parameters": {
+      "model__alpha": 0.01
+    },
+    "configurations": 6
+  },
+  {
+    "family": "KNN",
+    "cv_mae": 0.519589293030663,
+    "cv_mae_sd": 0.016192043607257577,
+    "cv_rmse": 0.6619427233545725,
+    "parameters": {
+      "model__weights": "distance",
+      "model__p": 2,
+      "model__n_neighbors": 21
+    },
+    "configurations": 12
+  }
+]
