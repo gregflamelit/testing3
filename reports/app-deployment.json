@@ -3,11 +3,11 @@
   "url": "https://wine-lab-gregflamelit.greg125769.chatgpt.site",
   "access": "owner-private; Sign in with ChatGPT",
   "project_id": "appgprj_6af11ba0bb848191afc8204bbd603a9d",
-  "version_id": "appgprj_6af11ba0bb848191afc8204bbd603a9d~appgver_6fee372711f08191b098b193d42437f4",
-  "deployment_id": "appgdep_6af126e3c4d481919226285d73d6da65",
-  "sites_source_commit": "81f4496720e96ac2403156ad93b16e8c73b7fd07",
-  "github_app_commit": "dd9579fd96f1ecf5867d35a0742b855d0cc646f4",
-  "ci_url": "https://github.com/gregflamelit/testing3/actions/runs/42547568558",
+  "version_id": "appgprj_6af11ba0bb848191afc8204bbd603a9d~appgver_a55803f2579081919278bb0e97a198ca",
+  "deployment_id": "appgdep_6af1d35911808191af2acc6bc3b395ff",
+  "sites_source_commit": "aadc67e31f7e2cc9daeda369d3e4dc26f0c0be05",
+  "github_app_commit": "7127fb1eb3179ed13d7fff70a93ca9a27ef1ab2c",
+  "ci_url": "https://github.com/gregflamelit/testing3/actions/runs/42631219172",
   "ci_jobs": {
     "web": "success",
     "linux_model": "success",
@@ -15,12 +15,12 @@
     "container": "success"
   },
   "production_browser_checks": [
-    "model connection",
-    "unchanged prediction engine",
-    "similar training samples and observed scores",
-    "unusual in-range combination review flag",
-    "reference comparison delta +2.04",
-    "chart data table alternative",
+    "compact estimate and review",
+    "full-width comparable-sample evidence",
+    "reason-specific filtering",
+    "reference selection and visual measurement differences",
+    "explicit higher-model-estimate wording",
+    "weak-flag-validation disclosure",
     "no browser console errors"
   ],
   "local_browser_checks": [
@@ -35,12 +35,16 @@
     "analytics controls",
     "desktop and mobile layouts"
   ],
-  "app_tests_passed": 46,
-  "python_tests_passed": 95,
+  "app_tests_passed": 47,
+  "python_tests_passed": 97,
   "parity_cases": 6388,
   "model_artifact_sha256": "82abd3c707275d2de5b9826d39c6035333151cb0237d231d6d7737360d531f10",
   "model_refitted": false,
-  "browser_scenarios_passed": 12,
+  "browser_scenarios_passed": 20,
   "training_only_reference_profiles": 1075,
-  "axe_violations_final": 0
+  "axe_violations_final": 0,
+  "review_thresholds_changed": false,
+  "flag_validation_development_rows": 1279,
+  "flag_validation_excluded_test_rows": 320,
+  "flag_error_separation_demonstrated": false
 }

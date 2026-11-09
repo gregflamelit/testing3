@@ -5,7 +5,7 @@
 **[Open the deployed Wine Lab app](https://wine-lab-gregflamelit.greg125769.chatgpt.site)** — owner-private; use the same ChatGPT account that owns the Site.
 
 The live prediction, batch comparison, and analytics screens were verified in a signed-in browser.
-[All four release CI jobs passed](https://github.com/gregflamelit/testing3/actions/runs/42547568558):
+[All four release CI jobs passed](https://github.com/gregflamelit/testing3/actions/runs/42631219172):
 web tests/typecheck/build, Linux ML QA/reproduction, Windows ML QA/reproduction, and Docker HTTP inference.
 The current release includes 47 app/API tests, 97 Python tests, 20 desktop/mobile browser scenarios, and 6,388 cross-runtime prediction parity cases.
 
