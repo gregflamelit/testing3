@@ -1,0 +1,30 @@
+<testsuites id="" name="" tests="12" failures="0" skipped="0" errors="0" time="18.152491">
+<testsuite name="app.spec.ts" timestamp="2026-11-09T01:46:50.955Z" hostname="desktop-chromium" tests="6" failures="0" skipped="0" time="7.093" errors="0">
+<testcase name="prediction, training examples, stale results, units, and export" classname="app.spec.ts" time="0.925">
+</testcase>
+<testcase name="an unusual in-range combination and out-of-range sample trigger human review" classname="app.spec.ts" time="0.641">
+</testcase>
+<testcase name="CSV validation, reference comparison, selection, filtering, and downloads" classname="app.spec.ts" time="1.001">
+</testcase>
+<testcase name="full dataset is chunked without dropping rows; sample identity and scores stay client-side" classname="app.spec.ts" time="1.025">
+</testcase>
+<testcase name="server failures surface an error and leave no partial batch results" classname="app.spec.ts" time="0.528">
+</testcase>
+<testcase name="keyboard access, chart alternatives, and WCAG scans across all views" classname="app.spec.ts" time="2.973">
+</testcase>
+</testsuite>
+<testsuite name="app.spec.ts" timestamp="2026-11-09T01:46:50.955Z" hostname="mobile-chromium" tests="6" failures="0" skipped="0" time="7.277" errors="0">
+<testcase name="prediction, training examples, stale results, units, and export" classname="app.spec.ts" time="0.942">
+</testcase>
+<testcase name="an unusual in-range combination and out-of-range sample trigger human review" classname="app.spec.ts" time="0.646">
+</testcase>
+<testcase name="CSV validation, reference comparison, selection, filtering, and downloads" classname="app.spec.ts" time="1.089">
+</testcase>
+<testcase name="full dataset is chunked without dropping rows; sample identity and scores stay client-side" classname="app.spec.ts" time="1.063">
+</testcase>
+<testcase name="server failures surface an error and leave no partial batch results" classname="app.spec.ts" time="0.579">
+</testcase>
+<testcase name="keyboard access, chart alternatives, and WCAG scans across all views" classname="app.spec.ts" time="2.958">
+</testcase>
+</testsuite>
+</testsuites>

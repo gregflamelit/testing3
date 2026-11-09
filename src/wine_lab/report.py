@@ -187,7 +187,7 @@ This is one smoke-control permutation, not a formal permutation hypothesis test.
 Use the model to explore sensory quality estimates for measurements resembling Portuguese red Vinho Verde wines.
 It does not establish causality, health/safety, market value, quality of white wines, or transfer to other regions.
 Feature permutation is a post-lock diagnostic; correlated inputs and small test samples limit interpretation.
-Only single-feature training-range checks are implemented; plausible ranges do not guarantee an in-distribution combination.
+The web app also checks five-neighbor similarity against 1,075 distinct development profiles and shows comparable training samples. This is a training-support heuristic, not calibrated uncertainty; plausible values or similar examples do not guarantee accuracy.
 No calibrated individual prediction interval is provided. No generative AI is used in prediction.
 Additional independent contemporary samples are the next requirement for stronger generalization evidence.
 

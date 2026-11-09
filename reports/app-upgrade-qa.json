@@ -1,0 +1,20 @@
+{
+  "model_refitted": false,
+  "artifact_sha256": "82abd3c707275d2de5b9826d39c6035333151cb0237d231d6d7737360d531f10",
+  "training_only_reference_profiles": 1075,
+  "python_tests_passed": 95,
+  "node_tests_passed": 46,
+  "browser_scenarios_passed": 12,
+  "browser_runtime": "built production Worker",
+  "viewports": [
+    "desktop Chromium",
+    "mobile Chromium"
+  ],
+  "axe_scanned_views": [
+    "prediction with comparable samples",
+    "batch comparison",
+    "model analytics"
+  ],
+  "axe_violations_final": 0,
+  "scope": "No full WCAG conformance claim; similarity heuristic is not calibrated uncertainty"
+}

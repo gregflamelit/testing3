@@ -1,5 +1,6 @@
 import model from "./generated/model.json" with { type: "json" };
 import metadata from "./generated/metadata.json" with { type: "json" };
+import { assessReliability, type Reliability } from "./reliability.ts";
 
 export const features = model.features;
 export const modelMetadata = metadata;
@@ -9,6 +10,7 @@ export type Prediction = {
   warnings: string[];
   model_version: string;
   reference_test_mae: number;
+  reliability: Reliability;
 };
 
 export function validateSamples(samples: unknown): asserts samples is Measurements[] {
@@ -54,9 +56,11 @@ export function predict(samples: unknown): Prediction[] {
         warnings.push(`${f} is outside the training range (${range.min}–${range.max}). Treat this estimate with extra caution.`);
       }
     }
+    const predicted_quality = evaluate(features.map(f => sample[f]));
     return {
-      predicted_quality: evaluate(features.map(f => sample[f])), warnings,
+      predicted_quality, warnings,
       model_version: metadata.model_version, reference_test_mae: metadata.test_metrics.mae,
+      reliability: assessReliability(sample, predicted_quality, warnings.length > 0),
     };
   });
 }

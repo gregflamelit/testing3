@@ -19,9 +19,23 @@ Open http://127.0.0.1:5173. The preview uses the Sites starter’s local sign-in
 node --experimental-strip-types --test tests/*.test.ts
 node node_modules/typescript/bin/tsc --noEmit
 pnpm build
+node node_modules/@playwright/test/cli.js install chromium
+pnpm test:e2e
 ```
 
 The checked-in generated model is exported from the locked Python artifact. To regenerate it from the repository root, activate the Python ML environment and run `python scripts/export_web_model.py`. No training occurs. The parity fixtures are used by tests and are never imported into the browser bundle.
+
+The training-support index is generated separately with `python scripts/export_reliability.py`.
+Read [the reliability method](RELIABILITY.md) for how training-only neighborhood checks, comparable samples,
+review flags, and reference comparisons work. The original champion remains frozen.
+
+Browser CI tests the built production Worker on desktop and mobile Chromium. It covers prediction,
+training examples, units, stale results, malformed and full-dataset uploads, four-chunk inference,
+reference differences/exports, filters, pagination, server failures, keyboard access, chart alternatives,
+and axe WCAG 2 A/AA, 2.1 AA, and 2.2 AA checks across the three views.
+Reports, traces, videos, and failure screenshots are retained as GitHub Actions artifacts.
+Locally, set `E2E_PRODUCTION=1` to use the production build; otherwise the runner starts the dev server.
+Automated scans do not establish complete WCAG compliance and complement manual checks.
 
 ## Architecture
 

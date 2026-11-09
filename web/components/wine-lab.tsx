@@ -20,8 +20,8 @@ export default function WineLab() {
     fetch("/api/health", { signal: controller.signal }).then(async r => { if (!r.ok || (await r.json() as { status?: string }).status !== "ok") throw new Error(); setConnection("ready"); }).catch(e => { if (e.name !== "AbortError") setConnection("error"); });
     return () => { controller.abort(); window.removeEventListener("hashchange", handle); };
   }, []);
-  function navigate(next: View) { setView(next); history.replaceState(null, "", `#${next}`); window.scrollTo({ top: 0, behavior: "smooth" }); }
-  return <div className="workspace">
+  function navigate(next: View) { setView(next); history.replaceState(null, "", `#${next}`); window.scrollTo(0, 0); }
+  return <div className="workspace"><a className="skip-link" href="#main-content">Skip to main content</a>
     <aside className="sidebar">
       <a className="brand" href="#predict" onClick={() => navigate("predict")} aria-label="Wine Lab home"><span className="brand-symbol"><Wine size={25} strokeWidth={1.4} /></span><span>Wine<span className="brand-light">Lab</span><small>THE SCIENCE OF A GOOD POUR</small></span></a>
       <div className="workspace-name"><span className="workspace-avatar">WL</span><div>Red wine workspace<small>Vinho Verde collection</small></div><ChevronRight size={15} /></div>
@@ -30,7 +30,7 @@ export default function WineLab() {
       <div className="sidebar-bottom"><a href="https://github.com/gregflamelit/testing3" target="_blank" rel="noreferrer"><CircleHelp size={17} />Project & documentation<ArrowRight size={14} /></a><div className="sidebar-version"><span className="online-dot" />Validated model<span>v1.0</span></div></div>
     </aside>
     <div className="main-shell"><header className="topbar"><div>WORKSPACE<span>/</span><strong>Wine intelligence</strong></div><span className={`connection ${connection}`}><span />{connection === "ready" ? "Model connected" : connection === "loading" ? "Connecting to model" : "Connection unavailable"}</span></header>
-      <main id="main-content"><div className="page-heading"><div><div className="eyebrow"><span />RED WINE INTELLIGENCE</div><h1>{view === "predict" ? <>A little chemistry.<br /><em>A clearer picture.</em></> : view === "batch" ? <>Every sample.<br /><em>Side by side.</em></> : <>Behind the prediction.<br /><em>See the evidence.</em></>}</h1><p>{view === "predict" ? "Turn three lab measurements into an informed view of wine quality." : view === "batch" ? "Bring your lab results together. Compare estimates, spot differences, and explore." : "Understand how the model was selected, where it performs, and where it falls short."}</p></div><div className="heading-stamp"><FlaskConical size={24} strokeWidth={1.2} /><span>BUILT ON DATA.<br />MADE FOR DISCOVERY.</span></div></div>
+      <main id="main-content" tabIndex={-1}><div className="page-heading"><div><div className="eyebrow"><span />RED WINE INTELLIGENCE</div><h1>{view === "predict" ? <>A little chemistry.<br /><em>A clearer picture.</em></> : view === "batch" ? <>Every sample.<br /><em>Side by side.</em></> : <>Behind the prediction.<br /><em>See the evidence.</em></>}</h1><p>{view === "predict" ? "Turn three lab measurements into an informed view of wine quality." : view === "batch" ? "Bring your lab results together. Compare estimates, spot differences, and explore." : "Understand how the model was selected, where it performs, and where it falls short."}</p></div><div className="heading-stamp"><FlaskConical size={24} strokeWidth={1.2} /><span>BUILT ON DATA.<br />MADE FOR DISCOVERY.</span></div></div>
         <div hidden={view !== "predict"}><PredictionPanel onCompare={() => navigate("batch")} onAnalytics={() => navigate("analytics")} /></div>
         <div hidden={view !== "batch"}><BatchPanel /></div>
         <div hidden={view !== "analytics"}><AnalyticsPanel /></div>

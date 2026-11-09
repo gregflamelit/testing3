@@ -7,7 +7,7 @@
 The live prediction, batch comparison, and analytics screens were verified in a signed-in browser.
 [All four release CI jobs passed](https://github.com/gregflamelit/testing3/actions/runs/42545668016):
 web tests/typecheck/build, Linux ML QA/reproduction, Windows ML QA/reproduction, and Docker HTTP inference.
-The release includes 40 app tests plus the existing 93 Python tests, and 6,388 cross-runtime prediction parity cases.
+The current release includes 46 app/API tests, 95 Python tests, 12 desktop/mobile browser scenarios, and 6,388 cross-runtime prediction parity cases.
 
 Predict sensory wine quality with three measured inputs, compare CSV batches, and inspect the model evidence.
 The complete React app is in `web/`, backed by the exact released CatBoost model and preprocessing.
@@ -16,8 +16,10 @@ The repository also includes a reproducible 10-family benchmark and the original
 ## Web app
 
 - **Prediction:** three inputs with sliders and numeric entry, examples, stale-result handling, range warnings, and CSV export.
+- **Training support:** unusual-combination checks, three comparable real training samples, and explicit human-review triggers.
 - **Batch comparison:** CSV upload, robust validation, up to 5,000 samples, 500-sample inference chunks,
   sorting/search/filtering, pagination, up to three side-by-side samples, and full CSV export.
+- **Reference decisions:** choose a baseline sample, inspect estimated score and measured-input differences, and export the comparison.
 - **Analytics:** model-family benchmark, input-count comparison, test metrics/baseline, rare-score errors,
   predicted-versus-observed plot, and downloadable evaluation evidence.
 
@@ -29,6 +31,11 @@ Observed-file metrics are clearly distinguished from the independent model-relea
 
 See [web setup and deployment](web/README.md). Sites hosting begins owner-private; GitHub holds the complete source.
 The original Docker/Python service remains available as a separate deployment option.
+
+The current QA suite includes 95 Python tests, 46 web unit/API tests, and 12 automated desktop/mobile browser scenarios.
+Browser CI exercises the production Worker and runs axe accessibility scans, retaining failure evidence as artifacts.
+Training-support checks use 1,075 distinct development profiles and exclude all held-out rows;
+they are explicitly described as similarity heuristics, not confidence estimates. See [the method](web/RELIABILITY.md).
 
 **Selected champion: CatBoost using volatile acidity, sulphates, and alcohol.**
 

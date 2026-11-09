@@ -81,8 +81,8 @@ export function csvCell(value: string | number): string {
   return /[",\r\n]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text;
 }
 
-export function resultsCSV(rows: (BatchRow & { predicted: number; warnings: string[] })[]): string {
-  const headers = ["sample_id", ...REQUIRED, "predicted_quality", "observed_quality", "error", "warnings"];
+export function resultsCSV(rows: (BatchRow & { predicted: number; warnings: string[]; reliability?: {support: string; human_review_recommended: boolean; review_reasons: string[]} })[]): string {
+  const headers = ["sample_id", ...REQUIRED, "predicted_quality", "observed_quality", "error", "warnings", "training_support", "human_review_recommended", "review_reasons"];
   return [headers.join(","), ...rows.map(row => [row.id, ...REQUIRED.map(f => row.measurements[f]), row.predicted,
-    row.observed ?? "", row.observed === null ? "" : row.predicted - row.observed, row.warnings.join("; ")].map(csvCell).join(","))].join("\r\n");
+    row.observed ?? "", row.observed === null ? "" : row.predicted - row.observed, row.warnings.join("; "), row.reliability?.support ?? "", row.reliability ? String(row.reliability.human_review_recommended) : "", row.reliability?.review_reasons.join("; ") ?? ""].map(csvCell).join(","))].join("\r\n");
 }

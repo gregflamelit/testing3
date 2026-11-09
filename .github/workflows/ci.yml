@@ -10,6 +10,7 @@ permissions:
 jobs:
   web:
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     defaults:
       run:
         working-directory: web
@@ -26,6 +27,16 @@ jobs:
       - run: node --experimental-strip-types --test tests/*.test.ts
       - run: node node_modules/typescript/bin/tsc --noEmit
       - run: node scripts/run-framework.mjs build
+      - run: node node_modules/@playwright/test/cli.js install --with-deps chromium
+      - run: node node_modules/@playwright/test/cli.js test
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-qa
+          path: |
+            web/playwright-report/
+            web/test-results/
+          retention-days: 14
   test:
     strategy:
       fail-fast: false
