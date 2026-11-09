@@ -1,0 +1,304 @@
+{
+  "model_artifact_sha256": "82abd3c707275d2de5b9826d39c6035333151cb0237d231d6d7737360d531f10",
+  "dataset_sha256": "d6a0d9bd24806944818795f22500c46cb6424cbff517aacda36595d3ed9b2daa",
+  "rule_version": "1.0.0",
+  "rules_sha256": "ca68c071e94f37b1364f9db1f3dab585458e2fa6eca948d0f8f65d2060dfd6bb",
+  "rules": {
+    "version": "1.0.0",
+    "neighbors": 5,
+    "unusual_quantile": 0.95,
+    "disagreement_span": 3,
+    "uncommon_low": 4,
+    "uncommon_high": 7
+  },
+  "development_rows": 1279,
+  "excluded_test_rows": 320,
+  "folds": 5,
+  "seed": 42,
+  "overall_oof_mae": 0.4768010915902344,
+  "overall_error_over_one_rate": 0.12509773260359655,
+  "summaries": [
+    {
+      "reason": "outside_range",
+      "flagged": {
+        "rows": 8,
+        "groups": 8,
+        "mae": 0.9290493826350306,
+        "median_absolute_error": 0.8624831219490519,
+        "rmse": 1.136987727433338,
+        "error_over_one_rate": 0.5
+      },
+      "not_flagged": {
+        "rows": 1271,
+        "groups": 1079,
+        "mae": 0.4739545248488038,
+        "median_absolute_error": 0.3335868268891433,
+        "rmse": 0.6596288343575172,
+        "error_over_one_rate": 0.12273800157356413
+      },
+      "flagged_share": 0.006254886630179828,
+      "mae_difference": 0.45509485778622677,
+      "mae_difference_95_group_bootstrap_ci": [
+        -0.02073119143723258,
+        0.9771377943779833
+      ],
+      "fraction_large_errors_flagged": 0.025,
+      "higher_mae_interval_above_zero": false
+    },
+    {
+      "reason": "unusual_combination",
+      "flagged": {
+        "rows": 62,
+        "groups": 50,
+        "mae": 0.4825082508729458,
+        "median_absolute_error": 0.3677049842071667,
+        "rmse": 0.6336904317600148,
+        "error_over_one_rate": 0.0967741935483871
+      },
+      "not_flagged": {
+        "rows": 1217,
+        "groups": 1037,
+        "mae": 0.4765103406653963,
+        "median_absolute_error": 0.3335868268891433,
+        "rmse": 0.6651743402672198,
+        "error_over_one_rate": 0.1265406737880033
+      },
+      "flagged_share": 0.04847537138389367,
+      "mae_difference": 0.005997910207549473,
+      "mae_difference_95_group_bootstrap_ci": [
+        -0.10496462857763367,
+        0.13110434596920736
+      ],
+      "fraction_large_errors_flagged": 0.0375,
+      "higher_mae_interval_above_zero": false
+    },
+    {
+      "reason": "nearby_disagreement",
+      "flagged": {
+        "rows": 82,
+        "groups": 75,
+        "mae": 0.5061022891010977,
+        "median_absolute_error": 0.34251260036168363,
+        "rmse": 0.708942100816488,
+        "error_over_one_rate": 0.17073170731707318
+      },
+      "not_flagged": {
+        "rows": 1197,
+        "groups": 1012,
+        "mae": 0.47479382492700073,
+        "median_absolute_error": 0.33388148988937427,
+        "rmse": 0.6604686077393117,
+        "error_over_one_rate": 0.12197159565580618
+      },
+      "flagged_share": 0.06411258795934324,
+      "mae_difference": 0.03130846417409694,
+      "mae_difference_95_group_bootstrap_ci": [
+        -0.08324330941852985,
+        0.15447584354186156
+      ],
+      "fraction_large_errors_flagged": 0.0875,
+      "higher_mae_interval_above_zero": false
+    },
+    {
+      "reason": "uncommon_score",
+      "flagged": {
+        "rows": 10,
+        "groups": 10,
+        "mae": 0.3236045818823402,
+        "median_absolute_error": 0.055741596954508754,
+        "rmse": 0.5448803353230569,
+        "error_over_one_rate": 0.1
+      },
+      "not_flagged": {
+        "rows": 1269,
+        "groups": 1077,
+        "mae": 0.47800831388895704,
+        "median_absolute_error": 0.338285196089374,
+        "rmse": 0.6645344424707216,
+        "error_over_one_rate": 0.12529550827423167
+      },
+      "flagged_share": 0.007818608287724784,
+      "mae_difference": -0.15440373200661683,
+      "mae_difference_95_group_bootstrap_ci": [
+        -0.4372617503583412,
+        0.15662618494509853
+      ],
+      "fraction_large_errors_flagged": 0.00625,
+      "higher_mae_interval_above_zero": false
+    },
+    {
+      "reason": "any_review",
+      "flagged": {
+        "rows": 151,
+        "groups": 132,
+        "mae": 0.48716787548017515,
+        "median_absolute_error": 0.3451430132513771,
+        "rmse": 0.6649702696894112,
+        "error_over_one_rate": 0.1456953642384106
+      },
+      "not_flagged": {
+        "rows": 1128,
+        "groups": 955,
+        "mae": 0.47541333949149245,
+        "median_absolute_error": 0.3337341583892588,
+        "rmse": 0.6635100272212686,
+        "error_over_one_rate": 0.12234042553191489
+      },
+      "flagged_share": 0.11806098514464425,
+      "mae_difference": 0.011754535988682702,
+      "mae_difference_95_group_bootstrap_ci": [
+        -0.06999724680610425,
+        0.09967566940951247
+      ],
+      "fraction_large_errors_flagged": 0.1375,
+      "higher_mae_interval_above_zero": false
+    }
+  ],
+  "unique_group_sensitivity": [
+    {
+      "reason": "outside_range",
+      "flagged": {
+        "rows": 8,
+        "groups": 8,
+        "mae": 0.9290493826350306,
+        "median_absolute_error": 0.8624831219490519,
+        "rmse": 1.136987727433338,
+        "error_over_one_rate": 0.5
+      },
+      "not_flagged": {
+        "rows": 1079,
+        "groups": 1079,
+        "mae": 0.47649557294627504,
+        "median_absolute_error": 0.3335868268891433,
+        "rmse": 0.6655859911830823,
+        "error_over_one_rate": 0.12048192771084337
+      },
+      "flagged_share": 0.007359705611775529,
+      "mae_difference": 0.4525538096887555,
+      "mae_difference_95_group_bootstrap_ci": [
+        -0.02829838154026756,
+        0.9791973861869285
+      ],
+      "fraction_large_errors_flagged": 0.029850746268656716,
+      "higher_mae_interval_above_zero": false
+    },
+    {
+      "reason": "unusual_combination",
+      "flagged": {
+        "rows": 50,
+        "groups": 50,
+        "mae": 0.500763405617041,
+        "median_absolute_error": 0.3964433130641911,
+        "rmse": 0.6611289851753426,
+        "error_over_one_rate": 0.1
+      },
+      "not_flagged": {
+        "rows": 1037,
+        "groups": 1037,
+        "mae": 0.4788167290156789,
+        "median_absolute_error": 0.3335868268891433,
+        "rmse": 0.6707049759547461,
+        "error_over_one_rate": 0.12439729990356799
+      },
+      "flagged_share": 0.045998160073597055,
+      "mae_difference": 0.021946676601362125,
+      "mae_difference_95_group_bootstrap_ci": [
+        -0.08700741655775496,
+        0.14438877687953922
+      ],
+      "fraction_large_errors_flagged": 0.03731343283582089,
+      "higher_mae_interval_above_zero": false
+    },
+    {
+      "reason": "nearby_disagreement",
+      "flagged": {
+        "rows": 75,
+        "groups": 75,
+        "mae": 0.5245976540409139,
+        "median_absolute_error": 0.3622755223088152,
+        "rmse": 0.7267847445690555,
+        "error_over_one_rate": 0.18666666666666668
+      },
+      "not_flagged": {
+        "rows": 1012,
+        "groups": 1012,
+        "mae": 0.4765081958666428,
+        "median_absolute_error": 0.33356293613490795,
+        "rmse": 0.6658880721658159,
+        "error_over_one_rate": 0.11857707509881422
+      },
+      "flagged_share": 0.06899724011039558,
+      "mae_difference": 0.04808945817427107,
+      "mae_difference_95_group_bootstrap_ci": [
+        -0.06682760921843639,
+        0.169034528618163
+      ],
+      "fraction_large_errors_flagged": 0.1044776119402985,
+      "higher_mae_interval_above_zero": false
+    },
+    {
+      "reason": "uncommon_score",
+      "flagged": {
+        "rows": 10,
+        "groups": 10,
+        "mae": 0.3236045818823402,
+        "median_absolute_error": 0.055741596954508754,
+        "rmse": 0.5448803353230569,
+        "error_over_one_rate": 0.1
+      },
+      "not_flagged": {
+        "rows": 1077,
+        "groups": 1077,
+        "mae": 0.4812767617932104,
+        "median_absolute_error": 0.338285196089374,
+        "rmse": 0.6713220004184061,
+        "error_over_one_rate": 0.12349117920148561
+      },
+      "flagged_share": 0.00919963201471941,
+      "mae_difference": -0.15767217991087018,
+      "mae_difference_95_group_bootstrap_ci": [
+        -0.44496511667556865,
+        0.14800898391893755
+      ],
+      "fraction_large_errors_flagged": 0.007462686567164179,
+      "higher_mae_interval_above_zero": false
+    },
+    {
+      "reason": "any_review",
+      "flagged": {
+        "rows": 132,
+        "groups": 132,
+        "mae": 0.5040109414470787,
+        "median_absolute_error": 0.35700491410927215,
+        "rmse": 0.6860666054732971,
+        "error_over_one_rate": 0.1590909090909091
+      },
+      "not_flagged": {
+        "rows": 955,
+        "groups": 955,
+        "mae": 0.47648342827130535,
+        "median_absolute_error": 0.3262666478471452,
+        "rmse": 0.6680543583203957,
+        "error_over_one_rate": 0.11832460732984293
+      },
+      "flagged_share": 0.12143514259429623,
+      "mae_difference": 0.027527513175773344,
+      "mae_difference_95_group_bootstrap_ci": [
+        -0.0577419381236031,
+        0.11995010326135642
+      ],
+      "fraction_large_errors_flagged": 0.15671641791044777,
+      "higher_mae_interval_above_zero": false
+    }
+  ],
+  "distance_error_spearman": 0.17724584248505296,
+  "method": "Five grouped OOF development folds. Frozen champion parameters and three-input schema; scaler, ranges, reference profiles and distance cutoff rebuilt using fold training rows only.",
+  "limitations": [
+    "Development data previously informed model/feature selection. This is an exploratory audit, not a new independent test.",
+    "The original 11-measurement identity defines groups; distinct lab profiles with identical selected inputs may occur across folds.",
+    "Flag definitions were frozen before this audit. No cutoff or model changes were chosen from these results.",
+    "Rule subgroups overlap. Percentile group-bootstrap intervals are exploratory, unadjusted for multiple comparisons, and do not fully capture dependence from overlapping fold training sets.",
+    "Observed association is not calibrated individual confidence or proof that human review improves outcomes.",
+    "Rare flagged subgroups can have wide intervals. Additional independent data is needed for confirmation."
+  ]
+}

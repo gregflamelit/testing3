@@ -59,3 +59,9 @@ python -m pytest tests/test_reliability_index.py
 The tests prove every comparable row belongs to development data, actual measurements/scores match the CSV,
 selected-input profiles are unique, the index reproduces, and the champion artifact checksum is unchanged.
 Web tests separately check unusual in-range combinations, deterministic neighbors, extreme values, and reference arithmetic.
+
+## Exploratory out-of-fold flag validation
+
+The frozen flags were audited across five grouped development folds. Within each fold, the temporary model, scaler, ranges, neighbor index, and distance cutoff used training rows only. No held-out test rows were used. Any flag had OOF MAE 0.487 versus 0.475 without a flag; the 95% group-bootstrap difference interval was [-0.070, 0.100]. Error-risk separation was not demonstrated. No flag threshold was tuned from these findings. The model settings/features had previously been selected using development data, so this is exploratory evidence, not an independent test.
+
+See `../reports/REVIEW_FLAG_AUDIT.md` for subgroup counts, errors, uncertainty, limitations, and reproduction. The analytics screen includes the same findings and a downloadable audit. Reference rows now show explicit reason labels and filters; comparisons use a pinned reference and non-causal measurement-difference bars.

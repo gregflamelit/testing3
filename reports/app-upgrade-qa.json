@@ -2,9 +2,9 @@
   "model_refitted": false,
   "artifact_sha256": "82abd3c707275d2de5b9826d39c6035333151cb0237d231d6d7737360d531f10",
   "training_only_reference_profiles": 1075,
-  "python_tests_passed": 95,
-  "node_tests_passed": 46,
-  "browser_scenarios_passed": 12,
+  "python_tests_passed": 97,
+  "node_tests_passed": 47,
+  "browser_scenarios_passed": 20,
   "browser_runtime": "built production Worker",
   "viewports": [
     "desktop Chromium",
@@ -16,5 +16,15 @@
     "model analytics"
   ],
   "axe_violations_final": 0,
-  "scope": "No full WCAG conformance claim; similarity heuristic is not calibrated uncertainty"
+  "scope": "No full WCAG conformance claim; similarity heuristic is not calibrated uncertainty",
+  "flag_audit_development_rows": 1279,
+  "flag_audit_excluded_test_rows": 320,
+  "flagged_oof_mae": 0.48716787548017515,
+  "unflagged_oof_mae": 0.47541333949149245,
+  "flag_error_separation_demonstrated": false,
+  "review_thresholds_changed": false,
+  "compact_prediction_layout": true,
+  "reason_specific_filters": true,
+  "pinned_reference": true,
+  "visual_measurement_differences": true
 }

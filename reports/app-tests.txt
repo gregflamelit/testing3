@@ -1,66 +1,67 @@
-✔ health and model schema expose the locked champion (24.6354ms)
-✔ real route returns exact ordered batch predictions without caching (6.9001ms)
-✔ route handles 500 sample chunks and 1000 sample request limit (147.9536ms)
-✔ route rejects invalid contract {} (0.6593ms)
-✔ route rejects invalid contract {"samples":[]} (0.4261ms)
-✔ route rejects invalid contract {"samples":[{}]} (0.3554ms)
-✔ route rejects invalid contract {"samples":[{"volatile acidity":0.7,"sulphates":0.56,"alcohol":9.4}],"extra":1} (0.2918ms)
-✔ route rejects invalid contract {"samples":[{"volatile acidity":0.7,"sulphates":0.56,"alcohol":9.4,"quality":5}]} (2.9633ms)
-✔ route rejects malformed JSON and oversized body (1.9633ms)
-✔ client preserves server errors and rejects incomplete/nonfinite responses (24.8797ms)
-✔ reference differences have correct direction, units, and zero self-difference (0.811ms)
-✔ comparison CSV preserves the chosen reference and escapes formula-like labels (0.3838ms)
-✔ CSV supports quotes, BOM, CRLF, sample names, and semicolons (1.9973ms)
-✔ full dataset columns are ignored explicitly; observed quality stays separate (0.2421ms)
-✔ all 1,599 dataset rows are supported for chunked inference (7.6602ms)
-✔ CSV downloads escape spreadsheet formulas and quoted IDs (0.6012ms)
-✔ reject invalid CSV  (0.3178ms)
-✔ reject invalid CSV sample_id,volatile acidity,sulphates,alcohol (0.2038ms)
+✔ health and model schema expose the locked champion (36.2713ms)
+✔ real route returns exact ordered batch predictions without caching (5.19ms)
+✔ route handles 500 sample chunks and 1000 sample request limit (151.716ms)
+✔ route rejects invalid contract {} (0.5122ms)
+✔ route rejects invalid contract {"samples":[]} (0.311ms)
+✔ route rejects invalid contract {"samples":[{}]} (0.2929ms)
+✔ route rejects invalid contract {"samples":[{"volatile acidity":0.7,"sulphates":0.56,"alcohol":9.4}],"extra":1} (0.3655ms)
+✔ route rejects invalid contract {"samples":[{"volatile acidity":0.7,"sulphates":0.56,"alcohol":9.4,"quality":5}]} (2.7393ms)
+✔ route rejects malformed JSON and oversized body (1.8879ms)
+✔ client preserves server errors and rejects incomplete/nonfinite responses (34.2418ms)
+✔ reference differences have correct direction, units, and zero self-difference (0.9973ms)
+✔ comparison CSV preserves the chosen reference and escapes formula-like labels (0.4508ms)
+✔ CSV supports quotes, BOM, CRLF, sample names, and semicolons (2.1406ms)
+✔ full dataset columns are ignored explicitly; observed quality stays separate (0.2575ms)
+✔ all 1,599 dataset rows are supported for chunked inference (6.7966ms)
+✔ CSV downloads escape spreadsheet formulas and quoted IDs (0.5595ms)
+✔ reject invalid CSV  (0.3271ms)
+✔ reject invalid CSV sample_id,volatile acidity,sulphates,alcohol (0.0815ms)
 ✔ reject invalid CSV unknown,sulphates,alcohol
-1,2,3 (0.189ms)
+1,2,3 (0.1576ms)
 ✔ reject invalid CSV sample_id,volatile acidity,sulphates,alcohol
-x,,.5,9 (0.1912ms)
+x,,.5,9 (0.4202ms)
 ✔ reject invalid CSV sample_id,volatile acidity,sulphates,alcohol
-x,nan,.5,9 (0.1276ms)
+x,nan,.5,9 (0.2186ms)
 ✔ reject invalid CSV sample_id,volatile acidity,sulphates,alcohol
-x,-1,.5,9 (0.15ms)
+x,-1,.5,9 (0.2203ms)
 ✔ reject invalid CSV sample_id,volatile acidity,sulphates,alcohol
-x,1,.5,9,1 (0.0978ms)
+x,1,.5,9,1 (0.1205ms)
 ✔ reject invalid CSV sample_id,volatile acidity,sulphates,alcohol
 x,1,.5,9
-x (0.1291ms)
+x (0.1544ms)
 ✔ reject invalid CSV sample_id,volatile acidity,sulphates,alcohol
-"broken,1, (0.0824ms)
+"broken,1, (0.0932ms)
 ✔ reject invalid CSV alcohol,alcohol,sulphates,volatile acidity
-9,9,.5,.7 (0.0576ms)
+9,9,.5,.7 (0.0635ms)
 ✔ reject invalid CSV sample_id,volatile acidity,sulphates,alcohol,quality
-x, (0.0989ms)
+x, (0.0779ms)
 ✔ reject invalid CSV sample_id,volatile acidity,sulphates,alcohol,extra
-x,.7 (0.0794ms)
+x,.7 (0.0798ms)
 ✔ reject invalid CSV sample_id,volatile acidity,sulphates,alcohol
-"x"oops,.7 (0.1623ms)
-✔ web ensemble matches Python champion on dataset, randomized inputs, and every split boundary (122.0703ms)
-✔ range warnings and deterministic ordered batches (4.2517ms)
-✔ reject invalid model input null (0.395ms)
-✔ reject invalid model input [] (0.1118ms)
-✔ reject invalid model input {} (0.0747ms)
-✔ reject invalid model input [{"volatile acidity":0.7,"sulphates":0.56,"alcohol":9.4},{}] (0.0707ms)
-✔ reject invalid model input [{"volatile acidity":0.7,"sulphates":0.56,"alcohol":9.4,"quality":5}] (0.0551ms)
-✔ reject invalid model input [{"volatile acidity":0.7,"sulphates":0.56,"alcohol":"9.4"}] (0.0931ms)
-✔ reject invalid model input [{"volatile acidity":0.7,"sulphates":0.56,"alcohol":true}] (0.0918ms)
-✔ reject invalid model input [{"volatile acidity":0.7,"sulphates":0.56,"alcohol":null}] (0.1168ms)
-✔ reject invalid model input [{"volatile acidity":0.7,"sulphates":0.56,"alcohol":null}] (0.0906ms)
-✔ reject invalid model input [{"volatile acidity":0.7,"sulphates":0.56,"alcohol":-1}] (0.0496ms)
-✔ reject invalid model input [{"volatile acidity":0.7,"sulphates":0.56,"alcohol":9.4},{"volatile acidity (0.0542ms)
-✔ an ordinary sample gets similar real development examples (4.0853ms)
-✔ in-range unusual combinations are flagged independently of range checks (0.7212ms)
-✔ outside-range and uncommon predicted scores trigger review (1.6988ms)
-✔ distance and neighbor ordering are deterministic and finite at extreme values (0.9856ms)
-ℹ tests 46
+"x"oops,.7 (0.3737ms)
+✔ web ensemble matches Python champion on dataset, randomized inputs, and every split boundary (126.8014ms)
+✔ range warnings and deterministic ordered batches (4.0623ms)
+✔ reject invalid model input null (0.3356ms)
+✔ reject invalid model input [] (0.1164ms)
+✔ reject invalid model input {} (0.0896ms)
+✔ reject invalid model input [{"volatile acidity":0.7,"sulphates":0.56,"alcohol":9.4},{}] (0.0683ms)
+✔ reject invalid model input [{"volatile acidity":0.7,"sulphates":0.56,"alcohol":9.4,"quality":5}] (0.057ms)
+✔ reject invalid model input [{"volatile acidity":0.7,"sulphates":0.56,"alcohol":"9.4"}] (0.0747ms)
+✔ reject invalid model input [{"volatile acidity":0.7,"sulphates":0.56,"alcohol":true}] (0.0818ms)
+✔ reject invalid model input [{"volatile acidity":0.7,"sulphates":0.56,"alcohol":null}] (0.1361ms)
+✔ reject invalid model input [{"volatile acidity":0.7,"sulphates":0.56,"alcohol":null}] (0.0687ms)
+✔ reject invalid model input [{"volatile acidity":0.7,"sulphates":0.56,"alcohol":-1}] (0.0631ms)
+✔ reject invalid model input [{"volatile acidity":0.7,"sulphates":0.56,"alcohol":9.4},{"volatile acidity (0.0726ms)
+✔ versioned review rules match the exported neighborhood method (4.5225ms)
+✔ an ordinary sample gets similar real development examples (0.9002ms)
+✔ in-range unusual combinations are flagged independently of range checks (1.4895ms)
+✔ outside-range and uncommon predicted scores trigger review (1.6666ms)
+✔ distance and neighbor ordering are deterministic and finite at extreme values (1.1121ms)
+ℹ tests 47
 ℹ suites 0
-ℹ pass 46
+ℹ pass 47
 ℹ fail 0
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 333.1959
+ℹ duration_ms 362.1585

@@ -7,7 +7,7 @@
 The live prediction, batch comparison, and analytics screens were verified in a signed-in browser.
 [All four release CI jobs passed](https://github.com/gregflamelit/testing3/actions/runs/42547568558):
 web tests/typecheck/build, Linux ML QA/reproduction, Windows ML QA/reproduction, and Docker HTTP inference.
-The current release includes 46 app/API tests, 95 Python tests, 12 desktop/mobile browser scenarios, and 6,388 cross-runtime prediction parity cases.
+The current release includes 47 app/API tests, 97 Python tests, 20 desktop/mobile browser scenarios, and 6,388 cross-runtime prediction parity cases.
 
 Predict sensory wine quality with three measured inputs, compare CSV batches, and inspect the model evidence.
 The complete React app is in `web/`, backed by the exact released CatBoost model and preprocessing.
@@ -32,7 +32,7 @@ Observed-file metrics are clearly distinguished from the independent model-relea
 See [web setup and deployment](web/README.md). Sites hosting begins owner-private; GitHub holds the complete source.
 The original Docker/Python service remains available as a separate deployment option.
 
-The current QA suite includes 95 Python tests, 46 web unit/API tests, and 12 automated desktop/mobile browser scenarios.
+The current QA suite includes 97 Python tests, 47 web unit/API tests, and 20 automated desktop/mobile browser scenarios.
 Browser CI exercises the production Worker and runs axe accessibility scans, retaining failure evidence as artifacts.
 Training-support checks use 1,075 distinct development profiles and exclude all held-out rows;
 they are explicitly described as similarity heuristics, not confidence estimates. See [the method](web/RELIABILITY.md).
@@ -186,3 +186,7 @@ OpenAI Codex generated the implementation, tests, documentation, and analysis fr
 The web app uses the OpenAI Sites Vinext starter, React, and Lucide icons; modeling code uses no application template.
 No chatbot, generative model, paid prediction API, or prediction credential is required.
 Joblib artifacts should only be loaded from a trusted source; the release loader verifies the recorded SHA-256.
+
+## Review-flag validation
+
+The analytics screen now includes an exploratory five-fold grouped development audit of the frozen review rules. Flagged MAE was 0.487 versus 0.475 without a flag; the difference interval includes zero. Error-risk separation was not demonstrated. No thresholds were tuned to improve the result. [Read the audit and reproduction method](reports/REVIEW_FLAG_AUDIT.md). Prediction context is now compact, while comparable samples and technical evidence occupy a separate full-width section. Batch rows show reason-specific filters, a pinned reference, and visual measurement deltas.

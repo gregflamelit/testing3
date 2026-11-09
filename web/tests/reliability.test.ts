@@ -3,6 +3,13 @@ import assert from "node:assert/strict";
 import reference from "../lib/generated/reliability.json" with { type: "json" };
 import { assessReliability } from "../lib/reliability.ts";
 import { predict } from "../lib/predictor.ts";
+import rules from "../lib/review-rules.json" with { type: "json" };
+test("versioned review rules match the exported neighborhood method", () => {
+  assert.equal(rules.neighbors, reference.neighbors_for_distance);
+  assert.equal(rules.unusual_quantile, reference.threshold_quantile);
+  const r = predict([{ "volatile acidity": .16, sulphates: 1.98, alcohol: 8.4 }])[0].reliability;
+  assert.deepEqual(r.review_codes, ["unusual_combination"]);
+});
 test("an ordinary sample gets similar real development examples", () => {
   const r = predict([{ "volatile acidity": .7, sulphates: .56, alcohol: 9.4 }])[0].reliability;
   assert.equal(r.support, "similar_examples");

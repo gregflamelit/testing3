@@ -2,9 +2,9 @@
 
 ## Automated release checks
 
-- 95 Python tests: original model/data/API QA plus training-reference integrity and reproducibility.
-- 46 Node tests: model parity, CSV contracts, API/client errors, reliability flags, and reference arithmetic.
-- 12 Playwright scenarios: six flows on desktop Chromium and mobile Chromium.
+- 97 Python tests: original model/data/API QA plus training-reference integrity and reproducibility.
+- 47 Node tests: model parity, CSV contracts, API/client errors, reliability flags, and reference arithmetic.
+- 20 Playwright scenarios: ten flows on desktop Chromium and mobile Chromium.
 - The browser suite runs against the production Worker build in CI and was run locally against that same runtime.
 - 6,388 frozen-model parity cases remain unchanged (all dataset rows, randomized inputs, and tree-boundary probes).
 - Strict TypeScript check and production build passed.
@@ -24,3 +24,11 @@ The model has not been retrained or reselected. Its SHA-256 remains `82abd3c7072
 The comparable-sample index contains 1,075 distinct three-input profiles from the development split only. Tests prove all held-out rows are excluded and representative measurements and scores match actual CSV rows. Similarity and review flags are heuristic context, not probabilities of correctness or prediction intervals. See `RELIABILITY.md`.
 
 Uploads remain ephemeral. Labels and optional observed quality stay in browser memory; only the three model inputs reach the API. Existing owner-private access is preserved.
+
+## Decision-workflow and flag-audit release
+
+Prediction review is compact beside the estimate; comparable samples and technical explanations occupy a separate full-width section. Each review reason is visible in batch rows and has its own filter. A pinned reference persists while scrolling and when filters hide that reference row. Visual measurement differences show actual units and explicitly avoid causal or quality-superiority claims.
+
+New desktop/mobile tests verify layout separation, all four reason filters and their sample counts, reference pinning, numeric differences, and the weak-audit disclosure and export. The first run caught an incorrect expected fixture delta (-0.40 instead of the actual -0.42 g/L); the implementation was correct and the test expectation was corrected.
+
+The grouped OOF audit covers 1,279 development rows and excludes all 320 test rows. Every fold rebuilds the model clone, scaler, ranges, reference index, and distance cutoff using fold training rows only. Its results do not demonstrate reliable error-risk separation; this limitation is displayed in the app. Row-level evidence, fold IDs, bootstrap summaries, and reproduction code are checked in. The original deployed model and rule thresholds remain unchanged.

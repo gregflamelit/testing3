@@ -38,7 +38,7 @@ test("an unusual in-range combination and out-of-range sample trigger human revi
   await page.getByRole("spinbutton", { name: "Alcohol", exact: true }).fill("8.4");
   await page.getByRole("button", { name: "Predict wine quality", exact: true }).click();
   await expect(page.getByTestId("support-label")).toHaveText("Unusual measurement combination");
-  await expect(page.getByText("Human review is especially important", { exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Review recommended", exact: true })).toBeVisible();
   await page.getByRole("spinbutton", { name: "Alcohol", exact: true }).fill("15");
   await page.getByRole("button", { name: "Predict wine quality", exact: true }).click();
   await expect(page.getByTestId("support-label")).toHaveText("Outside the studied range");

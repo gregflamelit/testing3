@@ -14,6 +14,7 @@ export async function requestPredictions(samples: Measurements[]): Promise<Predi
     typeof p.reliability.human_review_recommended !== "boolean" ||
     !Number.isFinite(p.reliability.neighborhood_distance) || !Number.isFinite(p.reliability.unusual_distance_threshold) ||
     !Array.isArray(p.reliability.review_reasons) || p.reliability.review_reasons.some((r: unknown) => typeof r !== "string") ||
+    !Array.isArray(p.reliability.review_codes) || p.reliability.review_codes.some((c: unknown) => !["outside_range", "unusual_combination", "nearby_disagreement", "uncommon_score"].includes(c as string)) ||
     !Array.isArray(p.reliability.nearby_observed_range) || p.reliability.nearby_observed_range.length !== 2 ||
     !Array.isArray(p.reliability.comparable_samples) || p.reliability.comparable_samples.length !== 3)) {
     throw new Error("The model returned incomplete results. Please try again.");

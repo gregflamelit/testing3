@@ -1,0 +1,8 @@
+{
+  "version": "1.0.0",
+  "neighbors": 5,
+  "unusual_quantile": 0.95,
+  "disagreement_span": 3,
+  "uncommon_low": 4,
+  "uncommon_high": 7
+}
